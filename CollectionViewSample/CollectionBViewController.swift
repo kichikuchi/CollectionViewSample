@@ -28,7 +28,7 @@ class CollectionBViewController: UICollectionViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let indicator = collectionView.subviews.filter { $0 is UIImageView }.last
+        let indicator = collectionView.subviews.lazy.reversed().filter { $0 is UIImageView }.first
         indicator?.layer.zPosition = 2
     }
     
